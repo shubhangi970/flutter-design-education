@@ -60,6 +60,52 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                      topLeft: Radius.circular(70),
                    )
                  ),
+                 padding: EdgeInsets.only(top: 40, bottom: 40),
+                 child: Column(
+                   children: [
+                     Text("Learning is everything",
+                       style: TextStyle(
+                         fontSize: 25,
+                         fontWeight: FontWeight.bold,
+                         letterSpacing: 1,
+                         wordSpacing: 2
+                       ),
+                     ),
+                     SizedBox(height: 15,),
+                     Padding(
+                         padding: EdgeInsets.symmetric(horizontal: 40),
+                       child: Text("Learning with Pleasure with Dear Programmer, wherever you are.",
+                         textAlign: TextAlign.center,
+                         style: TextStyle(
+                           fontSize: 17,
+                           color: Colors.black.withOpacity(0.8),
+
+                         ),
+                       ),
+                     ),
+                     SizedBox(height: 50,),
+                     Material(
+                       color: Colors.deepPurpleAccent,
+                       borderRadius: BorderRadius.circular(10),
+                       child: InkWell(
+
+                         onTap: (){},
+                         child: Container(
+                           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 90),
+
+                           child: Text("Get Started",
+                             style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 20,
+                               fontWeight: FontWeight.bold
+                             ),
+                           ),
+                         ),
+                       ),
+                     )
+
+                   ],
+                 ),
                )
            ),
          ],
