@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prac/pages/Home.dart';
 import 'package:prac/pages/WelcomeScreen.dart';
 
 void main() {
@@ -19,25 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomeScreen()
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("hello"),
-      ),
+      home: const Home()
     );
   }
 }
