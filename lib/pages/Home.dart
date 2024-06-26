@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
     List imageList = [
       'Flutter',
       'React Native',
-      'python',
+      'Python',
       'C#'
     ];
 
@@ -177,6 +177,13 @@ class _HomeState extends State<Home> {
                               ),
                               child: Column(
                                 children: [
+                                  Padding(
+                                      padding: EdgeInsets.all(10),
+                                    child: Image.asset("assets/images/${imageList[index]}.png",
+                                      width: 100,
+                                      height: 100,
+                                    ),
+                                  ),
 
                                 ],
                               ),
