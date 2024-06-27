@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prac/pages/CoureseScreen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -161,13 +162,15 @@ class _HomeState extends State<Home> {
                         physics: NeverScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: (MediaQuery.of(context).size.height - 50- 25)/ (4*240),
+                      childAspectRatio: 1/1.4,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10
                     ), itemBuilder: (context, index){
                           return InkWell(
                             onTap: (){
-
+                                Navigator.push(context, MaterialPageRoute(
+                                    builder:(context) => Couresescreen(imageList[index])
+                                ));
                             },
                             child: Container(
                                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
@@ -183,7 +186,26 @@ class _HomeState extends State<Home> {
                                       width: 100,
                                       height: 100,
                                     ),
+
                                   ),
+                                  SizedBox(height: 10,),
+
+                                  Text("${imageList[index]}",
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black.withOpacity(0.6)
+                                    ),
+                                  ),
+                                  SizedBox(height: 10,),
+
+                                  Text("55 Videos",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black.withOpacity(0.5)
+                                    ),
+                                  )
 
                                 ],
                               ),
@@ -199,7 +221,21 @@ class _HomeState extends State<Home> {
 
 
           ],
-        )
+        ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        iconSize: 32,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Color(0xff674aef),
+        selectedFontSize: 18,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.assignment), label: "Courses"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Wishlist"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account"),
+        ],
+      ),
     );
   }
 }
